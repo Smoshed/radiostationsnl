@@ -1,0 +1,175 @@
+body, p {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body {
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.center {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#stations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.station {
+    display: inline-block;
+    width: 160px;
+    margin: 15px;
+    background-color: #fff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.station img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.station p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.station:hover {
+    background-color: #000; /* Achtergrond zwart bij hover */
+    color: #fff; /* Tekst wit bij hover */
+}
+
+.station.active {
+    border: 2px solid #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+#player-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#play-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#play-button:hover {
+    background-color: #444; /* Donkerder bij hover */
+}
+
+#volume-slider {
+    width: 150px;
+}
+
+#station-logo-container {
+    margin-bottom: 10px;
+}
+
+#progress-bar-container {
+    width: 100%;
+    height: 5px;
+    background-color: #000000; /* Verander dit naar zwart als je dat wilt */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#current-time {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+}
+
+@media (max-width: 768px) {
+    .station {
+        width: 140px;
+    }
+
+    audio {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #stations-container {
+        flex-direction: column;
+    }
+
+    .station {
+        width: 100%;
+    }
+}
+
+audio {
+    display: none; /* Verberg het standaard weergegeven audio-element */
+}
+#station-logo {
+    width: 300px; /* Pas deze waarde aan naar je voorkeur */
+    height: auto; /* Zorg ervoor dat de verhoudingen behouden blijven */
+}
+#stations-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolommen van gelijke breedte */
+    gap: 20px; /* ruimte tussen de stations */
+    margin-top: 20px;
+}
+
+.station {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.station img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.station h2 {
+    margin-top: 10px;
+    color: white;
+    font-size: 18px;
+}
